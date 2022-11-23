@@ -8,12 +8,16 @@ Control legacy LG TVs from circa 2012. More details [here](https://github.com/al
 * `./LGremote TV_IP TV_PORT KEY` - show auth with TV (idk how long an auth lasts)
 * `./LGremote TV_IP TV_PORT CMD` - send command to TV (only works if already auth'd)
 * `./LGremote TV_IP TV_PORT KEY CMD` - Auth with TV then send command
+* `./LGremote TV_IP TV_PORT KEY SCREENSHOT OUTFILE.JPG` - Save a screenshot to a file
 
 ### Example
 
 * `./LGremote 192.168.1.101 8080 6942069 HOME` - Opens the `HOME` menu.
 
 The command key `HOME`, `POWER` etc is case insenstive and ignores `_`.
+
+* `./LGremote 192.168.1.101 8080 6942069 SCREENSHOT screenshot.jpg`
+On the other hand `SCREENSHOT` must be in caps and you must provide and output file.
 
 ## Building
 
