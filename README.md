@@ -1,6 +1,6 @@
 # LGremote.nim
 
-Control legacy LG TVs from circa 2012. More details [here](https://github.com/ali-raheem/LGRemote.rs).
+Control legacy LG TVs from circa 2012. More details [here](https://github.com/ali-raheem/LGRemote.rs) (link is an older Rust version).
 
 ## Usage
 
