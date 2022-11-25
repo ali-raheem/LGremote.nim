@@ -24,6 +24,15 @@ On the other hand `SCREENSHOT` must be in caps and you must provide and output f
 `nim c --opt:speed --verbosity:0 LGremote.nim`
 
 ## Commands
+
+There are roughly two types of commands that these TVs can accept.
+1. Post Commands
+  a. HandleKeyInput - basically what you might press on a traditional controller - SUPPORTED
+  b. Touch controls - what you would use a special controller for - NOT YET SUPPORTED
+2. Get Commands - request info about the current state - SUPPORTED
+
+### Key commands
+
 | Command | Key | Notes |
 | --------|-----|------ |
 | POWER | 1 | Can power the TV off but not on. Consider trying Wake on lan (not all TVs support this). |
@@ -91,6 +100,25 @@ On the other hand `SCREENSHOT` must be in caps and you must provide and output f
 | PIP_CHANNEL_DOWN | 415 |  |
 | PIP_SWITCH | 416 |  |
 | APPS | 417 |  |
+
+### Request Commands
+
+| Command | Target | Notes |
+|---------|--------|-------|
+| SCREENSHOT | screen_image | Returns JPEG data in body |
+| CHANNEL | cur_channel | Returns XML data about current channel |
+| CHANNELS | channel_list | Returns XML list of channels programmed into computer |
+| VOLUME | volume_info | Returns XML data about min, max and current volume |
+| CONTEXT | context_ui | Returns XML data about the context, what controls can work etc |
+| 3D | is_3d | Returns XML data if currently in 3D mode |
+
+### Not working
+
+* HandleTouchMove - I'll need to log some traffic to workout format
+* HandTouchClick - Ditto
+* HandleTouchWheel - Ditto
+* HandleChannelChange - Ditto
+* AppExecute - Ditto!!!
 
 # Resources/References
 Unfortunately official documentation doesn't seem to be available any longer but several libraries and scripts are available. node-lgtv-api[4]  is by far the most complete and useful project.
