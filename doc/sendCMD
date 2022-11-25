@@ -1,0 +1,13 @@
+POST /roap/api/command HTTP/1.1
+Host: 127.0.0.1:8080
+Connection: Keep-Alive
+content-length: 113
+content-type: application/atom+xml
+user-agent: Nim httpclient/1.6.10
+
+<?xml version="1.0" encoding="utf-8"?>
+ <command>
+  <name>HandleKeyInput</name>
+  <value>20</value>
+ </command>
+ 

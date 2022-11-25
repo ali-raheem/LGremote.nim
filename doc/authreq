@@ -1,0 +1,11 @@
+POST /roap/api/auth HTTP/1.1
+content-type: application/atom+xml
+accept: */*
+host: 127.0.0.1:8080
+content-length: 130
+
+
+            <?xml version="1.0" encoding="utf-8"?>
+            <auth>
+                <type>AuthKeyReq</type>
+            </auth>
