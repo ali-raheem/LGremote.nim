@@ -78,7 +78,10 @@ if paramCount() == 4:
   var tv = Tv(ip: paramStr(1), port: paramStr(2), key: paramStr(3), c: newHttpClient())
   tv.c.headers = newHttpHeaders({ "Content-Type": "application/atom+xml"})
   discard auth(tv)
-  discard sendCommand(tv, paramStr(4))
+  if paramStr(4) in getCommands:
+    echo getCommand(tv, getCommands[paramStr(4)]).body
+  else:
+    discard sendCommand(tv, paramStr(4))
 if paramCount() == 5:
   var tv = Tv(ip: paramStr(1), port: paramStr(2), key: paramStr(3), c: newHttpClient())
   tv.c.headers = newHttpHeaders({ "Content-Type": "application/atom+xml"})

@@ -12,12 +12,17 @@ Control legacy LG TVs from circa 2012. More details [here](https://github.com/al
 
 ### Example
 
-* `./LGremote 192.168.1.101 8080 6942069 HOME` - Opens the `HOME` menu.
+`./LGremote 192.168.1.101 8080 6942069 HOME` - Opens the `HOME` menu.
 
 The command key `HOME`, `POWER` etc is case insenstive and ignores `_`.
 
-* `./LGremote 192.168.1.101 8080 6942069 SCREENSHOT screenshot.jpg`
-On the other hand `SCREENSHOT` must be in caps and you must provide and output file.
+Where there is output:
+
+`./LGremote 192.168.1.101 8080 6942069 SCREENSHOT > screenshot.jpg`
+
+Uniquely, screenshot can also be done with an output file:
+
+`./LGremote 192.168.1.101 8080 6942069 SCREENSHOT screenshot.jpg`
 
 ## Building
 
@@ -127,6 +132,7 @@ Unfortunately official documentation doesn't seem to be available any longer but
 3. http://dorchain.net/~joerg/code/lg.py
 4. https://github.com/timmson/node-lgtv-api - most useful
 5. https://developer.lgappstv.com/TV_HELP/index.jsp?topic=%2Flge.tvsdk.references.book%2Fhtml%2FUDAP%2FUDAP%2FAnnex - defunct
+6. https://github.com/StefanNemeth/PHP-LG-SmartTV - Also very, very helpful
 
 ## License
 MIT licensed as that is in keeping with previous projects.
